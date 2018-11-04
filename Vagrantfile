@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "bento/centos-7.3"
+  config.vm.box = "base"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -56,9 +56,7 @@ Vagrant.configure("2") do |config|
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
   # end
-  #  db.vm.provision "ansible" do |ansible|
-  #    ansible.playbook = "database.yml"
-  #  end
+  #
   # View the documentation for the provider you are using for more
   # information on available options.
 
@@ -69,19 +67,4 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-
-  config.vm.define "host" do |host|
-   client.vm.hostname = "host"
-   client.vm.network "private_network", ip: "192.168.33.10"
-  end
-  config.vm.define "web" do |web|
-   web.vm.hostname = "web"
-   web.vm.network "private_network", ip: "192.168.33.20"
-  end  
-  config.vm.define "db" do |db|
-   db.vm.hostname = "db"
-   db.vm.network "private_network", ip: "192.168.33.30"
-  end
 end
-
-
