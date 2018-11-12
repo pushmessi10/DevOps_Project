@@ -13,7 +13,7 @@
 
     - name: Download and deploy Dushyant's Project
       git: 
-        repo: https://github.com/pushmessi10/DevOps_Project
+        repo: https://github.com/pushmessi10/DevOpsFinal
         dest: /var/www/html/CodeIgniter-3.1.5/
         clone: yes  
 
